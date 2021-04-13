@@ -15,6 +15,15 @@
 		7744293B262460E600470996 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77442939262460E600470996 /* LaunchScreen.storyboard */; };
 		77442946262460E700470996 /* EBITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77442945262460E700470996 /* EBITests.swift */; };
 		77442951262460E700470996 /* EBIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77442950262460E700470996 /* EBIUITests.swift */; };
+		7744296226246C0200470996 /* TransactionResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744296126246C0200470996 /* TransactionResponseModel.swift */; };
+		774429672624746200470996 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774429662624746200470996 /* TransactionModel.swift */; };
+		7744296C262474D900470996 /* TransactionListBoundary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744296B262474D900470996 /* TransactionListBoundary.swift */; };
+		774429712624752900470996 /* TransactionListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774429702624752900470996 /* TransactionListInteractor.swift */; };
+		77442976262475AE00470996 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77442975262475AE00470996 /* TransactionListViewModel.swift */; };
+		77442986262595B000470996 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77442985262595B000470996 /* TransactionTableViewCell.swift */; };
+		7744298B2625991000470996 /* TransactionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744298A2625991000470996 /* TransactionListViewController.swift */; };
+		7744299026259AA200470996 /* String+DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744298F26259AA200470996 /* String+DateFormat.swift */; };
+		7744299526259C5800470996 /* UIViewController+LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744299426259C5800470996 /* UIViewController+LoadingIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +58,15 @@
 		7744294C262460E700470996 /* EBIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EBIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77442950262460E700470996 /* EBIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EBIUITests.swift; sourceTree = "<group>"; };
 		77442952262460E700470996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7744296126246C0200470996 /* TransactionResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionResponseModel.swift; sourceTree = "<group>"; };
+		774429662624746200470996 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		7744296B262474D900470996 /* TransactionListBoundary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListBoundary.swift; sourceTree = "<group>"; };
+		774429702624752900470996 /* TransactionListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListInteractor.swift; sourceTree = "<group>"; };
+		77442975262475AE00470996 /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
+		77442985262595B000470996 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		7744298A2625991000470996 /* TransactionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewController.swift; sourceTree = "<group>"; };
+		7744298F26259AA200470996 /* String+DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DateFormat.swift"; sourceTree = "<group>"; };
+		7744299426259C5800470996 /* UIViewController+LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+LoadingIndicator.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +120,19 @@
 				7744292E262460E500470996 /* AppDelegate.swift */,
 				77442930262460E500470996 /* SceneDelegate.swift */,
 				77442932262460E500470996 /* ViewController.swift */,
+				7744296126246C0200470996 /* TransactionResponseModel.swift */,
+				774429662624746200470996 /* TransactionModel.swift */,
+				7744296B262474D900470996 /* TransactionListBoundary.swift */,
+				774429702624752900470996 /* TransactionListInteractor.swift */,
+				77442975262475AE00470996 /* TransactionListViewModel.swift */,
 				77442934262460E500470996 /* Main.storyboard */,
 				77442937262460E600470996 /* Assets.xcassets */,
 				77442939262460E600470996 /* LaunchScreen.storyboard */,
 				7744293C262460E600470996 /* Info.plist */,
+				77442985262595B000470996 /* TransactionTableViewCell.swift */,
+				7744298A2625991000470996 /* TransactionListViewController.swift */,
+				7744298F26259AA200470996 /* String+DateFormat.swift */,
+				7744299426259C5800470996 /* UIViewController+LoadingIndicator.swift */,
 			);
 			path = EBI;
 			sourceTree = "<group>";
@@ -258,9 +285,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				774429672624746200470996 /* TransactionModel.swift in Sources */,
+				7744298B2625991000470996 /* TransactionListViewController.swift in Sources */,
 				77442933262460E500470996 /* ViewController.swift in Sources */,
 				7744292F262460E500470996 /* AppDelegate.swift in Sources */,
+				774429712624752900470996 /* TransactionListInteractor.swift in Sources */,
+				7744299526259C5800470996 /* UIViewController+LoadingIndicator.swift in Sources */,
+				7744299026259AA200470996 /* String+DateFormat.swift in Sources */,
 				77442931262460E500470996 /* SceneDelegate.swift in Sources */,
+				77442976262475AE00470996 /* TransactionListViewModel.swift in Sources */,
+				7744296C262474D900470996 /* TransactionListBoundary.swift in Sources */,
+				77442986262595B000470996 /* TransactionTableViewCell.swift in Sources */,
+				7744296226246C0200470996 /* TransactionResponseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

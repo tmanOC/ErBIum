@@ -8,6 +8,28 @@
 import XCTest
 @testable import EBI
 
+class FakeTransactionListViewModelDelegate: TransactionListViewModelDelegate {
+    func refreshViewContents() {
+        print("contents refreshed")
+    }
+    
+    func showErrorMessage(message: String) {
+        print(message)
+    }
+}
+
+class FakeTransactionListInteractor: TransactionListInteractor {
+    let transactions:[[String:Any]]
+    init(transactions: [[String: Any]]) {
+        self.transactions = transactions
+    }
+    
+    override func fetchTransactions(accountNumber: String, limit: Int, success: @escaping TransactionListSuccessBlock, failure: @escaping TransactionListFailureBlock) {
+        success(transactions.compactMap{TransactionResponseModel(dictionary: $0)})
+    }
+}
+
+
 class EBITests: XCTestCase {
 
     override func setUpWithError() throws {
@@ -18,16 +40,20 @@ class EBITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testResponseModelConstructor() throws {
+        let transaction: [String:Any] =  ["refNo":"Reference1", "description":"Transaction1", "dateString":"2020-08-01T08:00:00Z", "amount":25000]
+        let transactionResponse = TransactionResponseModel(dictionary: transaction)
+        XCTAssertNotNil(transactionResponse.referenceNumber)
+        XCTAssertNotNil(transactionResponse.description)
+        XCTAssertNotNil(transactionResponse.date)
+        XCTAssertNotNil(transactionResponse.amountInCents)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testTransactionListViewModel() throws {
+        let viewModel = TransactionListViewModel(delegate: FakeTransactionListViewModelDelegate(), interactor: FakeTransactionListInteractor(transactions: [["refNo":"Reference1", "description":"Transaction1", "dateString":"2020-08-01T08:00:00Z", "amount":25000]]), accountNumber: "Some account number", transactionLimit: 30)
+        XCTAssertEqual(viewModel.numberOfTransactions, 0)
+        viewModel.fetchTransactionList()
+        XCTAssertEqual(viewModel.numberOfTransactions, 1)
     }
 
 }
