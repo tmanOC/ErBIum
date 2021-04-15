@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7744292F262460E500470996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744292E262460E500470996 /* AppDelegate.swift */; };
 		77442931262460E500470996 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77442930262460E500470996 /* SceneDelegate.swift */; };
-		77442933262460E500470996 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77442932262460E500470996 /* ViewController.swift */; };
 		77442936262460E500470996 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77442934262460E500470996 /* Main.storyboard */; };
 		77442938262460E600470996 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77442937262460E600470996 /* Assets.xcassets */; };
 		7744293B262460E600470996 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77442939262460E600470996 /* LaunchScreen.storyboard */; };
@@ -47,7 +46,6 @@
 		7744292B262460E500470996 /* EBI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EBI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7744292E262460E500470996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77442930262460E500470996 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		77442932262460E500470996 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		77442935262460E500470996 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77442937262460E600470996 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7744293A262460E600470996 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -119,18 +117,11 @@
 			children = (
 				7744292E262460E500470996 /* AppDelegate.swift */,
 				77442930262460E500470996 /* SceneDelegate.swift */,
-				77442932262460E500470996 /* ViewController.swift */,
-				7744296126246C0200470996 /* TransactionResponseModel.swift */,
-				774429662624746200470996 /* TransactionModel.swift */,
-				7744296B262474D900470996 /* TransactionListBoundary.swift */,
-				774429702624752900470996 /* TransactionListInteractor.swift */,
-				77442975262475AE00470996 /* TransactionListViewModel.swift */,
+				774429992628141600470996 /* TransactionList */,
 				77442934262460E500470996 /* Main.storyboard */,
 				77442937262460E600470996 /* Assets.xcassets */,
 				77442939262460E600470996 /* LaunchScreen.storyboard */,
 				7744293C262460E600470996 /* Info.plist */,
-				77442985262595B000470996 /* TransactionTableViewCell.swift */,
-				7744298A2625991000470996 /* TransactionListViewController.swift */,
 				7744298F26259AA200470996 /* String+DateFormat.swift */,
 				7744299426259C5800470996 /* UIViewController+LoadingIndicator.swift */,
 			);
@@ -153,6 +144,20 @@
 				77442952262460E700470996 /* Info.plist */,
 			);
 			path = EBIUITests;
+			sourceTree = "<group>";
+		};
+		774429992628141600470996 /* TransactionList */ = {
+			isa = PBXGroup;
+			children = (
+				7744296126246C0200470996 /* TransactionResponseModel.swift */,
+				774429662624746200470996 /* TransactionModel.swift */,
+				7744296B262474D900470996 /* TransactionListBoundary.swift */,
+				774429702624752900470996 /* TransactionListInteractor.swift */,
+				77442975262475AE00470996 /* TransactionListViewModel.swift */,
+				77442985262595B000470996 /* TransactionTableViewCell.swift */,
+				7744298A2625991000470996 /* TransactionListViewController.swift */,
+			);
+			name = TransactionList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,7 +292,6 @@
 			files = (
 				774429672624746200470996 /* TransactionModel.swift in Sources */,
 				7744298B2625991000470996 /* TransactionListViewController.swift in Sources */,
-				77442933262460E500470996 /* ViewController.swift in Sources */,
 				7744292F262460E500470996 /* AppDelegate.swift in Sources */,
 				774429712624752900470996 /* TransactionListInteractor.swift in Sources */,
 				7744299526259C5800470996 /* UIViewController+LoadingIndicator.swift in Sources */,
