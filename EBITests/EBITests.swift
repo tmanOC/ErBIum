@@ -13,18 +13,18 @@ class FakeTransactionListViewModelDelegate: TransactionListViewModelDelegate {
         print("contents refreshed")
     }
     
-    func showErrorMessage(message: String) {
+    func showErrorMessage(_ message: String) {
         print(message)
     }
 }
 
-class FakeTransactionListInteractor: TransactionListInteractor {
+class FakeTransactionListInteractor: TransactionListBoundary {
     let transactions:[[String:Any]]
     init(transactions: [[String: Any]]) {
         self.transactions = transactions
     }
     
-    override func fetchTransactions(accountNumber: String, limit: Int, success: @escaping TransactionListSuccessBlock, failure: @escaping TransactionListFailureBlock) {
+    func fetchTransactions(accountNumber: String, limit: Int, success: @escaping TransactionListSuccessBlock, failure: @escaping TransactionListFailureBlock) {
         success(transactions.compactMap{TransactionResponseModel(dictionary: $0)})
     }
 }
@@ -50,7 +50,7 @@ class EBITests: XCTestCase {
     }
 
     func testTransactionListViewModel() throws {
-        let viewModel = TransactionListViewModel(delegate: FakeTransactionListViewModelDelegate(), interactor: FakeTransactionListInteractor(transactions: [["refNo":"Reference1", "description":"Transaction1", "dateString":"2020-08-01T08:00:00Z", "amount":25000]]), accountNumber: "Some account number", transactionLimit: 30)
+        let viewModel = TransactionListViewModel(delegate: FakeTransactionListViewModelDelegate(), interactor: TransactionListInteractor(service: ServiceImplementation()), accountNumber: "Some account number", transactionLimit: 30)
         XCTAssertEqual(viewModel.numberOfTransactions, 0)
         viewModel.fetchTransactionList()
         XCTAssertEqual(viewModel.numberOfTransactions, 1)

@@ -23,6 +23,8 @@
 		7744298B2625991000470996 /* TransactionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744298A2625991000470996 /* TransactionListViewController.swift */; };
 		7744299026259AA200470996 /* String+DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744298F26259AA200470996 /* String+DateFormat.swift */; };
 		7744299526259C5800470996 /* UIViewController+LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744299426259C5800470996 /* UIViewController+LoadingIndicator.swift */; };
+		7744299E2628222500470996 /* ServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744299D2628222500470996 /* ServiceInterface.swift */; };
+		774429A6262823E000470996 /* ServiceImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774429A5262823E000470996 /* ServiceImplementation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		7744298A2625991000470996 /* TransactionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewController.swift; sourceTree = "<group>"; };
 		7744298F26259AA200470996 /* String+DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DateFormat.swift"; sourceTree = "<group>"; };
 		7744299426259C5800470996 /* UIViewController+LoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+LoadingIndicator.swift"; sourceTree = "<group>"; };
+		7744299D2628222500470996 /* ServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceInterface.swift; sourceTree = "<group>"; };
+		774429A5262823E000470996 /* ServiceImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceImplementation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 		7744292D262460E500470996 /* EBI */ = {
 			isa = PBXGroup;
 			children = (
+				774429A5262823E000470996 /* ServiceImplementation.swift */,
+				7744299D2628222500470996 /* ServiceInterface.swift */,
 				7744292E262460E500470996 /* AppDelegate.swift */,
 				77442930262460E500470996 /* SceneDelegate.swift */,
 				774429992628141600470996 /* TransactionList */,
@@ -290,7 +296,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				774429A6262823E000470996 /* ServiceImplementation.swift in Sources */,
 				774429672624746200470996 /* TransactionModel.swift in Sources */,
+				7744299E2628222500470996 /* ServiceInterface.swift in Sources */,
 				7744298B2625991000470996 /* TransactionListViewController.swift in Sources */,
 				7744292F262460E500470996 /* AppDelegate.swift in Sources */,
 				774429712624752900470996 /* TransactionListInteractor.swift in Sources */,

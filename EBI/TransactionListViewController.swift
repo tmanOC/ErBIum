@@ -14,7 +14,7 @@ class TransactionListViewController: UIViewController {
     private let maximumTransactionCount = 30
     @IBOutlet private var transactionTableView: UITableView!
     private(set) var accountNumber = ""
-    private lazy var viewModel = TransactionListViewModel(delegate: self, interactor: TransactionListInteractor(), accountNumber: "Account Number", transactionLimit: maximumTransactionCount)
+    private lazy var viewModel = TransactionListViewModel(delegate: self, interactor: TransactionListInteractor(service: ServiceImplementation()), accountNumber: "Account Number", transactionLimit: maximumTransactionCount)
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +24,13 @@ class TransactionListViewController: UIViewController {
         self.transactionTableView.dataSource = self
         retrieveTransactions()
     }
+    
     //MARK: Private
     private func retrieveTransactions() {
         showLoadingIndicator()
         viewModel.fetchTransactionList()
-    } }
+    }
+}
 
 extension TransactionListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,7 +47,6 @@ extension TransactionListViewController: UITableViewDataSource, UITableViewDeleg
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-    
 }
 
 extension TransactionListViewController: TransactionListViewModelDelegate {
@@ -55,4 +56,5 @@ extension TransactionListViewController: TransactionListViewModelDelegate {
     }
     func showErrorMessage(_ errorMessage: String) {
         //Show the error message
-    } }
+    }
+}
